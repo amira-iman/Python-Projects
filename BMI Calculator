@@ -1,0 +1,20 @@
+def main():
+    weight = float(input("Weight in pounds: "))
+    height = input("Height in feet and inches (e.g. \"5 3\"): ").split()
+    bmi_calculator(weight, height)
+
+def bmi_calculator(w, h):
+    w_kgs = w*0.45359237
+    h_centimeters = (int(h[0])*12 + int(h[1]))*2.54
+    bmi = (w_kgs/((h_centimeters/100)**2))
+
+    if bmi < 18.5:
+        print("You are underweight.")
+    elif 18.5 <= bmi <= 24.9:
+        print("You are healthy.")
+    elif 25.0 <= bmi <= 29.9:
+        print("You are overweight.")
+    elif 30.0 <= bmi:
+        print("You are obese.")
+
+main()
